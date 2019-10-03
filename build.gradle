@@ -125,8 +125,8 @@ test {
 }
 
 //excecute scripts
-10.times { counter -> task "auto_00$counter"(type: Test, dependsOn: testClasses){ include "**/*AutoConfig_00$counter"+"" }}
-62.times { counter -> task "auto_0$counter"(type: Test, dependsOn: testClasses){ include "**/*AutoConfig_0$counter"+"" }}
+10.times { counter -> task "auto_00$counter"(type: Test, dependsOn: testClasses){ include "**/*AutoConfig_00$counter"+"*" }}
+62.times { counter -> task "auto_0$counter"(type: Test, dependsOn: testClasses){ include "**/*AutoConfig_0$counter"+"*" }}
 
 //task run scripts and create junit report for scripts 
 10.times { counter -> task "AutoConfig_00$counter"(type: Copy) { dependsOn ":auto_00$counter" }}
